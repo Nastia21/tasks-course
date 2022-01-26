@@ -8,7 +8,6 @@ export const getTime = (strTask) => {
         const min = Number(arrTime[1]);
         if (hours <= 23 && min <= 59) {
             return arrTime.join(':');
-            break;
         }
         else {
             continue;
