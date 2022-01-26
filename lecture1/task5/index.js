@@ -3,7 +3,7 @@ export const getTime = (strTask) => {
     const arr = strTask.match(format);
 
     for (let i = 0; i < arr.length; i++) {
-        let arrTime = arr[i].split(':');
+        const arrTime = arr[i].split(':');
         const hours = Number(arrTime[0]);
         const min = Number(arrTime[1]);
         if (hours <= 23 && min <= 59) {
