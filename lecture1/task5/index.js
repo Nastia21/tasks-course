@@ -1,5 +1,5 @@
 export const getTime = (strTask) => {
- //const format = new RegExp(/[0-2][0-9]:[0-9][0-9]/g);
+
   const format = new RegExp(/[0-9]{2}:[0-9]{2}/g);
   const arr = strTask.match(format);
 
