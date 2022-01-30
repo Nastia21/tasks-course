@@ -1,12 +1,12 @@
 export const alphabetPosition = (strTask) => {
 
-    strTask = strTask.replace(/[, . ! ' ? \s ]/g, "");
+    strTask = strTask.replace(/[,.!'?\s]/g, "");
     const firstPosition = 'a'.charCodeAt();
     strTask = strTask.toLowerCase();
 
     let strArr = strTask.split('');
     
-    if(strArr.length == 0 )
+    if(strArr.length === 0 )
     {
         return "nothing";
     }
