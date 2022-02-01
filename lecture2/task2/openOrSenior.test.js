@@ -8,7 +8,7 @@ describe('openOrSenior', () => {
       expect(result).toEqual(['Open', 'Senior', 'Open', 'Senior']);
     });
 
-  test('Should return ["Open", "Senior", "Open", "Senior"]',
+  test('Should return ["Open", "Open", "Open", "Open"]',
     function() {
       const result = openOrSenior([[34, 11],[55,7],[39, 16],[38, 14]]);
 
