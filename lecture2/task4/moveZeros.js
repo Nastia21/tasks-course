@@ -1,12 +1,17 @@
 export const moveZeros = (arrOfValues) => {
   
   for(let i = 0; i < arrOfValues.length; i++){
-    if( arrOfValues[i] === 0 ){
-      arrOfValues.push(arrOfValues[i]);
-      arrOfValues.splice(i, 1);
+    for (let j = i + 1; j < arrOfValues.length; j++){
+      if(arrOfValues[i] === 0){
+        const temp = arrOfValues[j];
+
+        arrOfValues[j] = arrOfValues[i];
+        arrOfValues[i] = temp;
+      }
     }
   }
- 
+
   return arrOfValues;
 };
+
 
