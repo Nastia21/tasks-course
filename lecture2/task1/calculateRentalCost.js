@@ -1,19 +1,22 @@
 export const calculateRentalCost = (daysOfRent) => {
   
-  const price = 40;
-  const discoutForThreeDays = 20;
-  const discoutForSevenDays = 50;
+  const PRICE = 40;
+  const DISCOUNTFORTHREEDAYS = 20;
+  const DISCOUNTFORSEVENDAYS = 50;
+  const TWODAYS = 2;
+  const THREEDAYS = 3;
+  const WEEK = 7;
 
-  if(daysOfRent <= 2){
-    return daysOfRent * price;
+  if(daysOfRent <= TWODAYS){
+    return daysOfRent * PRICE;
   }
 
-  if(daysOfRent >= 7){
-    return daysOfRent * price - discoutForSevenDays;
+  if(daysOfRent >= WEEK){
+    return daysOfRent * PRICE - DISCOUNTFORSEVENDAYS;
   }
 
-  if(daysOfRent >= 3){
-    return daysOfRent * price - discoutForThreeDays;
+  if(daysOfRent >= THREEDAYS){
+    return daysOfRent * PRICE - DISCOUNTFORTHREEDAYS;
   }
 
 };
