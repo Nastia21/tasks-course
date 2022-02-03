@@ -16,7 +16,7 @@ export const invertColor = (inputHex) => {
     arrInvertHex.push(valueHex[resultIndex].toLowerCase());
   }
 
-  return('#' + arrInvertHex.join(''));
+    return `#${arrInvertHex.join('')}`;
  
 };
 
