@@ -7,7 +7,7 @@ export const invertColor = (inputHex) => {
 
   const arrCharHexColor = inputHex.split('');
 
-  const arrInvertHex = new Array();
+  const arrInvertHex = [];
 
   for(let i = 0; i < arrCharHexColor.length; i++){
     const index = valueHex.indexOf(arrCharHexColor[i]);
@@ -17,6 +17,5 @@ export const invertColor = (inputHex) => {
   }
 
     return `#${arrInvertHex.join('')}`;
- 
 };
 
