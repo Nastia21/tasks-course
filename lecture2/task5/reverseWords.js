@@ -17,7 +17,7 @@ export const reverseWords = (strTask) => {
 
   arrOfWordsOfTask = strTask.split(' ');
 
-  const newArrWords = new Array();
+  const newArrWords = [];
 
   arrOfWordsOfTask.forEach(item =>{
     const itemNew = item.split('');
