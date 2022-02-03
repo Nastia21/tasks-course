@@ -36,4 +36,11 @@ describe('isPrime', () => {
       expect(result).toBe(false);
     });
 
+  test('Should return error',
+    function() {
+      const result = isPrime('abc');
+
+      expect(result).toBe('Error with input number');
+    });
+
 });
