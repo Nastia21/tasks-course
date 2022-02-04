@@ -22,6 +22,4 @@ describe('createUrl', () => {
       expect(result).toBe('/api/items/0');
     });
 
-
-
 });
