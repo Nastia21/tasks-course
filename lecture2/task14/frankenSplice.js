@@ -1,15 +1,10 @@
 export const frankenSplice = (arrFirst, arrSecond, index) => {
   
   if(Number.isInteger(index)){
-    const arrTemp = arrSecond.slice(0,index);
+    arrSecond.splice(index, 0, ...arrFirst);
 
-    let arrResult = arrTemp.concat(arrFirst);
-
-    arrResult = arrResult.concat(arrSecond.slice(index));
-
-    return arrResult;
+    return arrSecond;
   } else{
     return 'error with index';
   }
 };
-
