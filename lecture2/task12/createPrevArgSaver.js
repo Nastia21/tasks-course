@@ -1,11 +1,8 @@
-export const createPrevArgSaver = () => {
-  let inputParam;
-  
-  return function() {
-    const args = [...arguments];
-    let previousCall = inputParam;
+export const createPrevArgSaver = (inputParam) => {
+  return function(nextCall) {
+    const previousCall = inputParam;
 
-    inputParam = args[0];
+    inputParam = nextCall;
 
     return previousCall;
   };
