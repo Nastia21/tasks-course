@@ -19,7 +19,7 @@ describe('transformState', () => {
         
       const result = transformState(state, transforms);
 
-      expect(result).toBe({foo: 'bar', name: 'Jim'});
+      expect(result).toEqual({foo: 'bar', name: 'Jim'});
     });
   
   test('Should return {name: "Jim"}',
@@ -33,7 +33,7 @@ describe('transformState', () => {
         
       const result = transformState(state, transforms);
 
-      expect(result).toBe({name: 'Jim'});
+      expect(result).toEqual({name: 'Jim'});
     });
   
   test('Should return {}',
@@ -47,7 +47,7 @@ describe('transformState', () => {
         
       const result = transformState(state, transforms);
 
-      expect(result).toBe({});
+      expect(result).toEqual({});
     });
 
 
@@ -78,9 +78,6 @@ describe('transformState', () => {
         
       const result = transformState(state, transforms);
 
-      expect(result).toBe({ foo: 'bar' });
+      expect(result).toEqual({ foo: 'bar' });
     });
-
-
-
 });
