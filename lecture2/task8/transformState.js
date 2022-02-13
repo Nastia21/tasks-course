@@ -15,24 +15,22 @@ export const transformState = (state, transforms) => {
       break;
     default:
       return 'Error';
-    }
+    }   
   },
   );
-
-  function addProperty(state, properties){
-    for(const key in properties){
-      state[key] = properties[key];
-    }
-
-    return state;
-  }
-
-  function removeProperty(state,properties){
-    for(const property in properties ){
-      delete state[property];
-    }
-
-    return state;
-  }
+  
+  return state;
 };
 
+
+function addProperty(state, properties){
+  for(const key in properties){
+    state[key] = JSON.parse(JSON.stringify(properties[key]));
+  }
+}
+
+function removeProperty(state,properties){
+  properties.forEach(property => {
+    delete state[property];
+  });
+}
