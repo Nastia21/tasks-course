@@ -18,6 +18,6 @@ export const userWithToDo = async() => {
       
     return objTotal;
   } catch (error){
-    return new Error;
+    throw new Error('Error with data');
   }
 };
