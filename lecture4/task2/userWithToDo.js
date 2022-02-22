@@ -1,11 +1,9 @@
+require('dotenv').config();
+
 export const userWithToDo = async() => {
   try {
-
-    const usersUrl = 'https://jsonplaceholder.typicode.com/users';
-    const todoUrl = 'https://jsonplaceholder.typicode.com/todos';
-
-    const responseUser = await fetch(usersUrl);
-    const responseToDo = await fetch(todoUrl);
+    const responseUser = await fetch(process.env.USERS_URL);
+    const responseToDo = await fetch(process.env.TODO_URL);
 
     const dataUsers = await responseUser.json();
     const dataDo = await responseToDo.json();
@@ -20,3 +18,5 @@ export const userWithToDo = async() => {
     return error.message;
   }
 };
+
+
