@@ -28,6 +28,15 @@ describe('getUserPostComment', () => {
     'body': 'laudantium enim quasi est',
   },];
 
+test('axios will be called 3 times',
+    async () => {
+
+      axios.get.mockResolvedValueOnce(() => Promise.resolve({ data: users }));
+      axios.get.mockResolvedValueOnce(() => Promise.resolve({ data: posts }));
+      axios.get.mockResolvedValueOnce(() => Promise.resolve({ data: comments }));
+
+      expect(axios.get).toHaveBeenCalledTimes(3);
+    });
     test("should return empty users list", async () => {
       axios.get.mockRejectedValueOnce(null);
 
