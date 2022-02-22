@@ -20,7 +20,7 @@ export const getUserPostComment = async () => {
     console.log({userPostComment});
 
   } catch (error) {
-    return error.message;
+    return [];
   }
   
 }
