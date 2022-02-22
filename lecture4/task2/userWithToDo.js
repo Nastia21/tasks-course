@@ -5,18 +5,17 @@ export const userWithToDo = async() => {
     const responseUser = await fetch(process.env.USERS_URL);
     const responseToDo = await fetch(process.env.TODO_URL);
 
-    const dataUsers = await responseUser.json();
-    const dataDo = await responseToDo.json();
+    const datOfUsers = await responseUser.json();
+    const arrOfToDo = await responseToDo.json();
 
-    const filteredComplete = dataDo.filter(checkDo => checkDo.completed);
+    const filteredComplete = arrOfToDo.filter(item => item.completed);
 
-    const objTotal = dataUsers.map(obj => Object.assign({}, obj,
-      { tasks: filteredComplete.filter(checkDo => (obj.id == checkDo.userId)) }));
+    const objResult = datOfUsers.map(obj => Object.assign({}, obj,
+      { tasks: filteredComplete.filter(item=> (obj.id == item.userId)) }));
 
-    return objTotal;
+    return objResult;
   } catch (error) {
-    return error.message;
+    //throw new Error('error with smth');
+    return null;
   }
 };
-
-
